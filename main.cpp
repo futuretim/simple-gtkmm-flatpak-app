@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     auto application =
-        Gtk::Application::create("com.sharedpointer.gtkmm-app");
+        Gtk::Application::create("com.sharedpointer.simple-gtkmm-app");
 
     auto refBuilder = Gtk::Builder::create();
 

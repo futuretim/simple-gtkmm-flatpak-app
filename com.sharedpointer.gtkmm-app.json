@@ -1,5 +1,5 @@
 {
-    "app-id": "com.sharedpointer.gtkmm-app",
+    "app-id": "com.sharedpointer.simple-gtkmm-app",
     "version": "master",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.22",
@@ -94,11 +94,11 @@
             ]
         },        
         {
-            "name": "hello",
+            "name": "simple-gtkmm-app",
             "sources": [
                 {
                     "type": "git",
-                    "url": ".git",
+                    "url": "https://github.com/futuretim/simple-gtkmm-flatpak-app.git",
                     "branch": "master"
                 }
             ],
