@@ -22,13 +22,12 @@
             "sources": [
                 {
                     "type": "git",
-                    "url": ".git",
-                    "branch": "master"
+                    "url": "https://github.com/futuretim/simple-gtkmm-flatpak-app.git",
+                    "branch": "flatpak_base_app"
                 }
             ],
-            "buildsystem": "cmake",            
+            "buildsystem": "cmake",
             "config-opts": [ "-DCMAKE_INSTALL_PREFIX=/app" ]
         }
     ]
 }
-

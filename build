@@ -1,0 +1,71 @@
+#!/bin/bash
+
+APP_DIR=gtkmm-app
+APP_ID=com.sharedpointer.gtkmm-app
+MANIFEST_FILE=com.sharedpointer.gtkmm-app.json
+REPO_NAME=local-repo
+REPO_DIR=${HOME}/local-flatpak-repo
+SHELL=bash
+
+function build() 
+{
+    rm -rf ${APP_DIR}/*
+	flatpak-builder --repo=${REPO_DIR} ${APP_DIR} ${MANIFEST_FILE}
+}
+
+function run()
+{
+    flatpak run ${APP_ID}
+}
+
+function shell()
+{
+	flatpak run --command=${SHELL} ${APP_ID}
+}
+
+function install() 
+{
+    flatpak install ${REPO_NAME} ${APP_ID}
+}
+
+function uninstall() 
+{
+    flatpak uninstall ${APP_ID}
+}
+
+function reinstall
+{
+    uninstall
+    install
+}
+
+case "$1" in
+    build)
+        build
+        ;;
+
+    run)
+        run
+        ;;
+
+    shell)
+        shell
+        ;;
+
+    install)
+        install
+        ;;
+
+    uninstall)
+        uninstall
+        ;;
+
+    reinstall)
+        reinstall
+        ;;
+        
+    *)
+
+        echo $"Usage: $0 {build}"
+        exit 1
+esac
